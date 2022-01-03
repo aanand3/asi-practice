@@ -1,16 +1,19 @@
 package com.practice.practice.team
 
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/teams")
 class TeamController(
-    private val teamRepository: TeamRepository
+    private val teamService: TeamService
 ) {
     @GetMapping
     fun getAllTeams(): List<TeamDTO> {
-        return teamRepository.findAll().map { it.toDTO() }
+        return teamService.getAllTeams()
+    }
+
+    @PostMapping("/create/{teamName}")
+    fun createTeam(@PathVariable teamName: String) {
+        return teamService.createTeam(teamName)
     }
 }
