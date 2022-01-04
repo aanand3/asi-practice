@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "create-react-app": "^5.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testURL":"http://localhost:8080"
+
+  }
+}
