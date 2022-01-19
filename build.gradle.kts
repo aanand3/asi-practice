@@ -3,7 +3,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "2.6.2"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
-	id("org.flywaydb.flyway") version "8.3.0"
 	kotlin("jvm") version "1.6.10"
 	kotlin("plugin.spring") version "1.6.10"
 	kotlin("plugin.jpa") version "1.6.10"
@@ -28,6 +27,8 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
 	testImplementation("io.mockk:mockk:1.12.0")
+	implementation("org.flywaydb:flyway-core:8.4.1")
+	implementation("org.flywaydb:flyway-mysql:8.4.1")
 }
 
 tasks.withType<KotlinCompile> {

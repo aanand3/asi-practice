@@ -29,15 +29,14 @@ internal class TeamServiceTest {
                 name = "team 2"
             )
         )
-        val expectedResult = teamList.map { it.toDTO() }
 
         every { mockTeamRepository.findAll() } returns teamList
 
-        assertThat(teamService.getAllTeams()).isEqualTo(expectedResult)
+        assertThat(teamService.getAllTeams()).isEqualTo(teamList)
     }
 
     @Test
-    fun `saves a team to the repo`() {
+    fun `createTeam saves a team to the repo`() {
         every {mockTeamRepository.save(any())} answers { firstArg() }
 
         teamService.createTeam("team 1")

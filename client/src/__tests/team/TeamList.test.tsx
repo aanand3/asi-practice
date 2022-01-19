@@ -2,7 +2,6 @@ import React from 'react';
 import {render, screen, waitFor} from '@testing-library/react';
 import {TeamList} from "../../team/TeamList";
 import {getTeams, Team} from "../../team/TeamApi";
-import {idleForIO} from "../TestHelpers";
 
 jest.mock('../../team/TeamApi')
 const mockGetTeams = getTeams as jest.MockedFunction<typeof getTeams>

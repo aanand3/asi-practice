@@ -14,7 +14,7 @@ export const TeamList = (props: TeamListProps) => {
             teams =>
                 setTeams(teams)
         )
-    })
+    }, [])
 
     const listOfTeams = (
         <ul>

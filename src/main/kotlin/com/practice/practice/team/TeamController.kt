@@ -4,13 +4,13 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/teams")
-@CrossOrigin(origins = ["http://localhost:3000", "http://localhost:8080"])
+@CrossOrigin
 class TeamController(
     private val teamService: TeamService
 ) {
     @GetMapping
     fun getAllTeams(): List<TeamDTO> {
-        return teamService.getAllTeams()
+        return teamService.getAllTeams().map { it.toDTO() }
     }
 
     @PostMapping("/create/{teamName}")

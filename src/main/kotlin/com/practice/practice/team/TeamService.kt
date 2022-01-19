@@ -6,10 +6,8 @@ import org.springframework.stereotype.Service
 class TeamService(
     private val teamRepository: TeamRepository
 ) {
-    // design note: all outputs should be DTO
-
-    fun getAllTeams(): List<TeamDTO> {
-        return teamRepository.findAll().map { it.toDTO() }
+    fun getAllTeams(): List<Team> {
+        return teamRepository.findAll()
     }
 
     fun createTeam(teamName: String) {
