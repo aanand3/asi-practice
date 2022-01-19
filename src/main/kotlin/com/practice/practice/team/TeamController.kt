@@ -13,8 +13,8 @@ class TeamController(
         return teamService.getAllTeams().map { it.toDTO() }
     }
 
-    @PostMapping("/create/{teamName}")
-    fun createTeam(@PathVariable teamName: String) {
-        return teamService.createTeam(teamName)
+    @PostMapping("/create")
+    fun createTeam(@RequestBody teamName: String) {
+        teamService.createTeam(teamName)
     }
 }

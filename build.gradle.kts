@@ -27,6 +27,7 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
 	testImplementation("io.mockk:mockk:1.12.0")
+	testImplementation("com.ninja-squad:springmockk:3.0.1")
 	implementation("org.flywaydb:flyway-core:8.4.1")
 	implementation("org.flywaydb:flyway-mysql:8.4.1")
 }
